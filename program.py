@@ -14,7 +14,7 @@ def getDataSource(data_path):
     with open(data_path) as csv_file:
         csv_reader = csv.DictReader(csv_file)
         for row in csv_reader:
-            Coffee.append(float(row["Cofee in ml"]))
+            Coffee.append(float(row["Coffee in ml"]))
             Sleep.append(float(row["sleep in hours"]))
     
     return {"x": Coffee, "y": Sleep}
@@ -29,3 +29,5 @@ def setup():
     datasource = getDataSource(data_path)
     findCorrelation(datasource)
     plotFigure(data_path)
+    
+setup()
